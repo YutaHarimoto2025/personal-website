@@ -1,3 +1,5 @@
+name: Deploy Node.js app to Azure Web App
+
 on:
   push:
     branches: [ "main" ]
@@ -5,6 +7,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: your-app-name
+  # 本番ではビルド成果物フォルダなどを指定した方がよい
   AZURE_WEBAPP_PACKAGE_PATH: '.'
   NODE_VERSION: '20.x'
 
@@ -15,24 +18,38 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - name: Check out code
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
 
-    - name: Install dependencies, build, and test
-      run: |
-        npm install --force --no-audit --no-fund  # 🔹 依存関係の問題を無視して強制インストール
-        npm run build --if-present
-        npm run test --if-present
+      # 依存関係は基本的に npm ci を使う
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v4
-      with:
-        name: node-app
-        path: .
+      # ビルドスクリプトがあれば実行
+      - name: Build
+        run: npm run build --if-present
+
+      # テストスクリプトがあれば実行
+      # テストが失敗している場合は、テスト修正または一時的にコメントアウトしてください
+      - name: Test
+        run: npm test --if-present
+
+      # デプロイに必要なファイルやフォルダのみをアップロードする（例: build/, package.json, package-lock.json）
+      # ここでは一例として、ビルド後の dist フォルダがある想定
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v4
+        with:
+          name: node-app
+          path: |
+            dist/
+            package.json
+            package-lock.json
+            # 必要に応じて追加
 
   deploy:
     permissions:
@@ -42,17 +59,16 @@ jobs:
     environment:
       name: 'Development'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
     steps:
-    - name: Download artifact from build job
-      uses: actions/download-artifact@v4
-      with:
-        name: node-app
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: node-app
 
-    - name: 'Deploy to Azure WebApp'
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+      - name: Deploy to Azure WebApp
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
