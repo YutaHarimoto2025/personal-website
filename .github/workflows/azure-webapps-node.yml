@@ -1,14 +1,12 @@
-# GitHub Actions Workflow for deploying a Node.js app to Azure Web App
-
 on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: your-app-name    # Set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # Set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '20.x'                # Set this to the Node.js version to use
+  AZURE_WEBAPP_NAME: your-app-name
+  AZURE_WEBAPP_PACKAGE_PATH: '.'
+  NODE_VERSION: '20.x'
 
 permissions:
   contents: read
@@ -23,11 +21,10 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.NODE_VERSION }}
-        cache: 'npm'
 
     - name: Install dependencies, build, and test
       run: |
-        npm install --no-audit --no-fund # ✅ Lockファイルがなくてもエラーを防ぐ
+        npm install --no-audit --no-fund --legacy-peer-deps
         npm run build --if-present
         npm run test --if-present
 
