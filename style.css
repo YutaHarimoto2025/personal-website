@@ -1,10 +1,93 @@
+/* 全体のデザイン */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
     text-align: center;
-    background-color: #f4f4f4;
-    margin: 50px;
+    padding: 20px;
 }
 
+/* 見出しのデザイン */
 h1 {
-    color: #333;
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #0056b3;
+    margin-top: 20px;
+}
+
+/* 箇条書きのデザイン */
+ul, ol {
+    display: inline-block;
+    text-align: left;
+    margin: 10px auto;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul li, ol li {
+    padding: 5px;
+}
+
+/* テーブルのデザイン */
+table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* リンクのデザイン */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* 画像のデザイン */
+img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* PDFダウンロードリンク */
+.pdf-link {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pdf-link:hover {
+    background-color: #218838;
+}
+
+/* 数式のデザイン（KaTeXの影響を強化） */
+.katex {
+    font-size: 1.5em;
 }

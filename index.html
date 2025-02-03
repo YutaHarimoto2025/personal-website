@@ -5,9 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="style.css">
+    <!-- KaTeX の数式表示用ライブラリ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/katex.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/katex.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
 </head>
 <body>
     <h1>こんにちは！</h1>
-    <p>張本宇辰　テストページです。ちょっと変更</p>
+    <p>張本宇辰　テストページです。</p>
+
+    <!-- 箇条書き -->
+    <h2>📌 箇条書きの例</h2>
+    <ul>
+        <li>リスト項目 1</li>
+        <li>リスト項目 2</li>
+        <li>リスト項目 3</li>
+    </ul>
+
+    <h2>🔢 番号付きリスト</h2>
+    <ol>
+        <li>最初の項目</li>
+        <li>次の項目</li>
+        <li>最後の項目</li>
+    </ol>
+
+    <!-- テーブル -->
+    <h2>📊 テーブルの例</h2>
+    <table border="1">
+        <tr>
+            <th>名前</th>
+            <th>年齢</th>
+            <th>職業</th>
+        </tr>
+        <tr>
+            <td>田中</td>
+            <td>25</td>
+            <td>エンジニア</td>
+        </tr>
+        <tr>
+            <td>佐藤</td>
+            <td>30</td>
+            <td>デザイナー</td>
+        </tr>
+    </table>
+
+    <!-- 他のリンクに飛ぶ -->
+    <h2>🔗 他のリンク</h2>
+    <p><a href="https://www.google.com" target="_blank">Google を開く</a></p>
+
+    <!-- 画像添付 -->
+    <h2>🖼 画像の表示</h2>
+    <img src="https://via.placeholder.com/300" alt="サンプル画像">
+
+    <!-- PDF 添付 -->
+    <h2>📄 PDF のダウンロード</h2>
+    <p><a href="sample.pdf" download>ここをクリックして PDF をダウンロード</a></p>
+
+    <!-- 数式を TeX で書く -->
+    <h2>📐 数式（TeX）</h2>
+    <p>二次方程式の解の公式：</p>
+    <p>\[
+        x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+    \]</p>
+
 </body>
 </html>
+
