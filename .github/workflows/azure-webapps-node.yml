@@ -36,8 +36,8 @@ jobs:
 
       # テストスクリプトがあれば実行
       # テストが失敗している場合は、テスト修正または一時的にコメントアウトしてください
-      - name: Test
-        # run: npm test --if-present
+      # - name: Test
+      # run: npm test --if-present
 
       # デプロイに必要なファイルやフォルダのみをアップロードする（例: build/, package.json, package-lock.json）
       # ここでは一例として、ビルド後の dist フォルダがある想定
