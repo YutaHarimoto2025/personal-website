@@ -1,0 +1,20 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YutaHarimoto2025/personal-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YutaHarimoto2025/personal-website/issues"
+  },
+  "homepage": "https://github.com/YutaHarimoto2025/personal-website#readme",
+  "description": ""
+}
