@@ -1,93 +1,123 @@
-/* 全体のデザイン */
+/* 全体のスタイル */
+body::before { 
+    content: "";
+    position: fixed; 
+    top: 0; /* 🔹 上端から開始 */
+    left: 20%; /* 🔹 左側から 25% の位置に配置 */
+    width: 60%; /* 🔹 横幅を 50% に制限（中央だけ） */
+    height: 100vh; /* 🔹 縦は全範囲 */
+    background-color: rgba(255, 255, 255, 0.7); /* 🔹 半透明の白フィルター */
+    pointer-events: none; /* 🔹 クリックを無効化（リンクを押せるように） */
+    z-index: -1; /* 🔹 背景に配置 */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    text-align: center;
-    padding: 20px;
+    font-family: "Arial", sans-serif;
+    background-color: #84b6c2; /* 背景色 */
+    color: #333; /* 文字色を落ち着いた濃いグレー */
+    line-height: 1.6;
+    text-align: center; /* 中央寄せ */
+
+    /* background-image: url('/image/back.png'); */
+    background: linear-gradient(#32a7e266, rgba(255, 255, 255, 0.4)),url('/image/back.png');
+    background-size: 130%; /* 背景画像のサイズを50%に縮小 */
+    background-repeat: no-repeat; /* 繰り返しを防ぐ */
+    background-position: center; /* 画面中央に配置 */
+    background-attachment: fixed; /* ページスクロール時も固定 */
 }
 
-/* 見出しのデザイン */
-h1 {
-    font-size: 2.5em;
-    color: #007bff;
-    margin-bottom: 10px;
+
+
+
+
+
+
+/* ヘッダー */
+h1, h2 {
+    font-weight: bold;
+    color: #2c3e50; /* 深みのあるブルー系 */
+    margin-bottom: 15px;
 }
 
-h2 {
-    color: #0056b3;
-    margin-top: 20px;
-}
-
-/* 箇条書きのデザイン */
+/* 箇条書き */
 ul, ol {
-    display: inline-block;
-    text-align: left;
-    margin: 10px auto;
-    padding: 10px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+    padding: 0;
 }
 
 ul li, ol li {
-    padding: 5px;
+    background: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 5px solid #3498db; /* 青のアクセント */
+    display: inline-block;
 }
 
-/* テーブルのデザイン */
+/* テーブル */
 table {
     width: 60%;
     margin: 20px auto;
     border-collapse: collapse;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 10px;
+    text-align: center;
 }
 
 th {
-    background-color: #007bff;
+    background: #2980b9;
     color: white;
 }
 
-/* リンクのデザイン */
+/* 画像スタイル */
+figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+figure img {
+    width: 80%; /* 大きめの画像 */
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* リンク */
 a {
-    color: #007bff;
+    color: #3498db;
     text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
-    color: #0056b3;
+    color: #1abc9c; /* ホバー時の色を変更 */
 }
 
-/* 画像のデザイン */
-img {
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* PDFダウンロードリンク */
-.pdf-link {
+/* PDF リンク */
+a[data-pdf] {
     display: inline-block;
     padding: 10px 15px;
-    margin-top: 10px;
-    background-color: #28a745;
+    background: #2c3e50;
     color: white;
-    text-decoration: none;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
-.pdf-link:hover {
-    background-color: #218838;
+a[data-pdf]:hover {
+    background: #1abc9c;
 }
 
-/* 数式のデザイン（KaTeXの影響を強化） */
-.katex {
-    font-size: 1.5em;
+/* 数式 */
+p {
+    font-size: 1.1em;
+    margin: 10px 0;
 }
