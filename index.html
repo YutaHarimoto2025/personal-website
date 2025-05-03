@@ -17,6 +17,7 @@
 </head>
 
 
+
 <body>
     <header>
         <h3>Here is a personal webpage of </h3>
@@ -24,12 +25,16 @@
         
     </header>
 
+    <button id="toggleContentBtn" style="position: fixed; top: 10px; right: 10px; z-index: 999;">
+        look turbulence 
+    </button>    
+
     <section>
         <h2>Brief History</h2>
         <ul class="history-list">
             <li>
                 <span class="year">Dec. 2000</span>
-                <span class="age"> age==0</span>
+                <!-- <span class="age"> age==0</span> -->
                 <span class="text">born in Ibaraki pref. in Japan</span>
             </li>
             <li>
@@ -51,7 +56,7 @@
             <li>
                 <span class="year">2013~2018</span>
                 <span class="text">
-                    <a href="/https://www.shibumaku.jp/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.shibumaku.jp/" target="_blank" rel="noopener noreferrer">
                         Shibuya Makuhari junior-high / high school
                     </a>
                 </span>
@@ -77,5 +82,12 @@
     <footer>
         <p>© 2025 Yuta Harimoto</p>
     </footer>
+
+    <!-- Javascript -->
+    <script>
+        document.getElementById('toggleContentBtn').addEventListener('click', function() {
+            document.body.classList.toggle('hide-content');
+        });
+    </script>
 </body>
 </html>

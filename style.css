@@ -6,7 +6,7 @@ body::before {
     left: 20%; /* 🔹 左側から 25% の位置に配置 */
     width: 60%; /* 🔹 横幅を 50% に制限（中央だけ） */
     height: 100vh; /* 🔹 縦は全範囲 */
-    background-color: rgba(255, 255, 255, 0.7); /* 🔹 半透明の白フィルター */
+    background-color: rgba(255, 255, 255, 0.7);  /*半透明の白フィルター*/
     pointer-events: none; /* 🔹 クリックを無効化（リンクを押せるように） */
     z-index: -1; /* 🔹 背景に配置 */
 }
@@ -43,7 +43,9 @@ h1, h2 {
 ul, ol {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;  /* 中央寄せ */
+    max-width: 600px; /* 最大横幅を制限 */
+    text-align: left; /* 文頭を左揃え */
 }
 
 header h1, header h3 {
@@ -55,12 +57,14 @@ header h1, header h3 {
 ul li, ol li {
     background: #f9f9f9; /* 軽いグレー背景 */
     padding: 12px 16px;
-    margin: 10px 0; /* 縦の余白を確保 */
+    margin: 0 auto; /* 縦の余白を確保 */
     border-left: 5px solid #2e7d32; /* 落ち着いた緑のアクセント */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影で浮き感 */
     border-radius: 4px; /* 角を丸める */
     display: block; /* 横並びを解除して縦配置に */
     transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Hover effect for stylish touch */
@@ -68,6 +72,7 @@ ul li:hover, ol li:hover {
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 
 /* テーブル */
@@ -142,7 +147,7 @@ p {
 .history-list {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;  /* 中央寄せ */
 }
 
 .history-list li {
@@ -180,4 +185,30 @@ p {
 
 .text a:hover {
     text-decoration: underline; /* ホバー時の下線（任意） */
+}
+
+.hide-content section,
+.hide-content header,
+.hide-content footer {
+    display: none;
+}
+body.hide-content::before {
+    background-color: transparent; /* ← ボタンを押したとき透明にする */
+}
+
+#toggleContentBtn {
+    padding: 12px 20px;
+    font-size: 1.2em;
+    background-color: #2e7d32; /* 緑色背景 */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#toggleContentBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
