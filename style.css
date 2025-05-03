@@ -39,19 +39,36 @@ h1, h2 {
     margin-bottom: 15px;
 }
 
-/* 箇条書き */
+/* Reset list style */
 ul, ol {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
-ul li, ol li {
-    background: #fff;
-    padding: 10px;
-    margin: 5px 0;
-    border-left: 5px solid #3498db; /* 青のアクセント */
-    display: inline-block;
+header h1, header h3 {
+    margin: 0;           /* 外側の余白をゼロに */
+    line-height: 1.2;    /* 行の高さを詰め気味に（通常は1.4〜1.6が多い） */
 }
+
+/* List items: vertical, elegant style */
+ul li, ol li {
+    background: #f9f9f9; /* 軽いグレー背景 */
+    padding: 12px 16px;
+    margin: 10px 0; /* 縦の余白を確保 */
+    border-left: 5px solid #2e7d32; /* 落ち着いた緑のアクセント */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影で浮き感 */
+    border-radius: 4px; /* 角を丸める */
+    display: block; /* 横並びを解除して縦配置に */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect for stylish touch */
+ul li:hover, ol li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 /* テーブル */
 table {
@@ -120,4 +137,47 @@ a[data-pdf]:hover {
 p {
     font-size: 1.1em;
     margin: 10px 0;
+}
+
+.history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-list li {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.history-list .year {
+    width: 100px;
+    font-weight: bold;
+    color: #2e7d32; /* deep green */
+}
+
+.history-list .age {
+    width: 80px;
+    font-style: italic;
+    color: #1565c0; /* deep blue */
+}
+
+.history-list .text {
+    flex: 1;
+    color: #333;
+}
+
+.text {
+    font-weight: normal; /* デフォルトは通常の太さ */
+}
+
+.text a {
+    font-weight: bold;   /* リンクがある場合だけ太字 */
+    color: inherit;      /* 親の色を引き継ぐ */
+    text-decoration: none;
+}
+
+.text a:hover {
+    text-decoration: underline; /* ホバー時の下線（任意） */
 }

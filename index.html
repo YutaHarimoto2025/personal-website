@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="jp">
 <head>
     
     <script src="module/password.js" defer></script> <!-- 外部JSを読み込む -->
@@ -16,79 +16,66 @@
         onload="renderMathInElement(document.body);"></script>
 </head>
 
-  <!-- 以下本文 -->
+
 <body>
-    <h1>こんにちは！</h1>
-    <p>張本宇辰 テストページです。</p>
+    <header>
+        <h3>Here is a personal webpage of </h3>
+        <h1>Yuta Harimoto (張本宇辰)</h1>
+        
+    </header>
 
-    <!-- 箇条書き -->
-    <h2> 簡易プロフィール</h2>
-    <ul>
-        <li>渋谷幕張中学・高校　卓球部だったよ</li>
-        <li>東京大学　波動で遊んだよ</li>
-        <li>東京大学大学院　流体で遊んだよ</li>
-    </ul>
+    <section>
+        <h2>Brief History</h2>
+        <ul class="history-list">
+            <li>
+                <span class="year">Dec. 2000</span>
+                <span class="age"> age==0</span>
+                <span class="text">born in Ibaraki pref. in Japan</span>
+            </li>
+            <li>
+                <span class="year">2006</span>
+                <span class="text">start to learn Go</span>
+            </li>
+            <li>
+                <span class="year">2007</span>
+                <span class="text">start to learn Piano</span>
+            </li>
+            <li>
+                <span class="year">2007~2012</span>
+                <span class="text">
+                    <a href="https://moriya.schoolweb.ne.jp/0810046" target="_blank" rel="noopener noreferrer">
+                        Moriya elementary school
+                    </a>
+                </span>
+            </li>
+            <li>
+                <span class="year">2013~2018</span>
+                <span class="text">
+                    <a href="/https://www.shibumaku.jp/" target="_blank" rel="noopener noreferrer">
+                        Shibuya Makuhari junior-high / high school
+                    </a>
+                </span>
+            </li>            
+            <li>
+                <span class="year">2025</span>
+                <span class="text">Internship: R&D Division, Proxima Technology Inc.</span>
+            </li>
+        </ul>
+    </section>
+    
 
-    <!-- <h2>🔢 番号付きリスト</h2>
-    <ol>
-        <li>最初の項目</li>
-        <li>次の項目</li>
-        <li>最後の項目</li>
-    </ol> -->
+    <section>
+        <h2>Featured Content</h2>
+        <ul>
+            <li>Master's Research: Optimization Algorithms and Numerical Experiments on the Three-Body Problem</li>
+            <li>Public Projects: Mathematical Optimization Toolkits on GitHub</li>
+            <li>Papers & Presentations: Conference Materials (PDF links)</li>
+            <li>Blog: Research Progress & Technical Notes (planned Notion integration)</li>
+        </ul>
+    </section>
 
-    <!-- テーブル -->
-    <h2>趣味</h2>
-    <table border="1">
-        <tr>
-            <th>趣味</th>
-            <th>歴</th>
-        </tr>
-        <tr>
-            <td>囲碁</td>
-            <td>5年</td>
-        </tr>
-        <tr>
-            <td>ピアノ</td>
-            <td>6年</td>
-        </tr>
-    </table>
-
-    <!-- 他のリンクに飛ぶ -->
-    <h2>🔗 他のリンク</h2>
-    <p><a href="hobby.html" target="_blank">趣味ページ開発中</a></p>
-
-    <!-- 画像添付 -->
-    <h2>テスト画像</h2>
-    <figure>
-        <img src="./image/Thesis_3D.jpg" alt="いい感じの可視化">
-        <figcaption>図1: いい感じの可視化</figcaption>
-    </figure>
-
-
-
-    <h2>PDF リスト</h2>
-    <p><a href="#" data-pdf="/pdf-folder/修論提出版.pdf" onclick="verifyPassword(event, this)" rel="noopener noreferrer">
-        修士論文
-    </a></p>
-
-
-    <!-- 数式を TeX で書く -->
-    <h2> 数式TEX</h2>
-    <p>Navier stokes & scalar field</p>
-    <p>
-        \[
-        \begin{aligned}
-        &\frac{\partial u_i}{\partial x_i}=0 \quad &\text{(Continuity)} \\
-        &\frac{\partial u_i}{\partial t} + u_j \frac{\partial u_i}{\partial x_j} =
-        -\frac{\partial p}{\partial x_i} + \frac{1}{\mathrm{Re}_d} \frac{\partial^2 u_i}{\partial x_j \partial x_j} 
-        \quad &\text{(Momentum)} \\
-        &\frac{\partial \theta}{\partial t} + u_j \frac{\partial \theta}{\partial x_j} =
-        \frac{1}{\mathrm{Pr}\mathrm{Re}_d} \frac{\partial^2 \theta}{\partial x_j \partial x_j} 
-        \quad &\text{(Energy)}
-        \end{aligned}
-        \]
-    </p>
-
+    <footer>
+        <p>© 2025 Yuta Harimoto</p>
+    </footer>
 </body>
 </html>
-
