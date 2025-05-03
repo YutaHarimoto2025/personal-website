@@ -19,7 +19,7 @@ body {
     text-align: center; /* 中央寄せ */
 
     /* background-image: url('/image/back.png'); */
-    background: linear-gradient(#32a7e266, rgba(255, 255, 255, 0.4)),url('/image/back.png');
+    background: linear-gradient(#32a7e266, rgba(255, 255, 255, 0.4)),url('./image/back.png');
     background-size: 130%; /* 背景画像のサイズを50%に縮小 */
     background-repeat: no-repeat; /* 繰り返しを防ぐ */
     background-position: center; /* 画面中央に配置 */

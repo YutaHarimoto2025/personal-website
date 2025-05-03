@@ -1,0 +1,72 @@
+{
+    "workbench.colorCustomizations": {
+      // ─── Activity Bar ─────────────────────────
+      "activityBar.background": "#2e3b2d",        // ダークグリーン
+      "activityBar.foreground": "#c8e6c9",        // 淡い緑
+      "activityBarBadge.background": "#81c784",   // 明るめの緑
+      "activityBarBadge.foreground": "#ffffff",
+  
+      // ─── Sidebar ──────────────────────────────
+      "sideBar.background": "#1b2a1b",                 // 深いモスグリーン
+      "sideBar.foreground": "#a5d6a7",                 // ソフトグリーン
+      "sideBarTitle.foreground": "#c5e1a5",            // セクションタイトル：黄緑寄り
+      "sideBarSectionHeader.background": "#2e7d32",    // 落ち着いた緑
+      "sideBarSectionHeader.foreground": "#dcedc8",
+  
+      // ─── Title Bar & Status Bar ────────────────
+      "titleBar.activeBackground": "#1b5e20",    // ダークグリーン
+      "titleBar.activeForeground": "#e8f5e9",
+      "statusBar.background": "#2e7d32",         // 落ち着いた緑
+      "statusBar.foreground": "#f1f8e9",
+  
+      // ─── Editor ────────────────────────────────
+      "editor.background": "#102010",             // 濃い緑背景
+      "editorLineNumber.foreground": "#81c784",   // 明るい緑系
+      "editorCursor.foreground": "#aed581",       // ライトグリーン
+      "editorWhitespace.foreground": "#4caf50",   // 緑系
+       
+      // ─── Tabs ──────────────────────────────────
+      "tab.activeBackground": "#1b5e20",          // アクティブタブ背景
+      "tab.activeForeground": "#dcedc8",
+      "tab.inactiveBackground": "#2e3b2d",        // 非アクティブ
+      "tab.inactiveForeground": "#a5d6a7",
+      "tab.hoverBackground": "#388e3c",
+      "tab.border": "#1b5e20",
+      "tab.activeBorder": "#66bb6a",
+  
+      // ─── Panel Tabs ────────────────────────────
+      "panel.background": "#102010",
+      "panel.border": "#2e7d32",
+      "panelTitle.activeForeground": "#dcedc8",
+      "panelTitle.inactiveForeground": "#a5d6a7",
+      "panelTitle.activeBorder": "#81c784",
+  
+      // ─── Scrollbars ────────────────────────────
+      "scrollbarSlider.background": "#4caf50",
+      "scrollbarSlider.hoverBackground": "#66bb6a",
+      "scrollbarSlider.activeBackground": "#81c784",
+      "scrollbar.shadow": "#000000",
+  
+      // ─── Minimap ───────────────────────────────
+      "minimap.background": "#102010",
+      "minimapSlider.background": "#81c784",
+      "minimapSlider.hoverBackground": "#66bb6a",
+      "minimapSlider.activeBackground": "#4caf50"
+    },
+    "python.analysis.typeCheckingMode": "off",
+      
+    "terminal.integrated.profiles.linux": {
+      "customEnv": {
+        "path": "/bin/bash",
+        "args": [
+          "-c",
+          "source /home/yuta-harimoto/.home_env/bin/activate && exec bash"
+        ]
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "customEnv"
+  }
+  
+
+
+
