@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="jp">
 <head>
-    
-    <script src="module/password.js" defer></script> <!-- 外部JSを読み込む -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
+
     <link rel="stylesheet" href="style.css">
 
     <!-- KaTeX の CSS & JS 読み込み -->
@@ -14,15 +12,15 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/katex.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/contrib/auto-render.min.js"
         onload="renderMathInElement(document.body);"></script>
+
+    <!-- 外部JSを読み込む -->
+    <script src="effect.js" defer></script>
 </head>
-
-
 
 <body>
     <header>
         <h3>Here is a personal webpage of </h3>
         <h1>Yuta Harimoto (張本宇辰)</h1>
-        
     </header>
 
     <button id="toggleContentBtn" style="position: fixed; top: 10px; right: 10px; z-index: 999;">
@@ -30,252 +28,73 @@
     </button>    
 
     <section>
-        <h2>Brief History</h2>
-        <ul class="list-common history-list">
-            <li>
-                <span class="year">Dec. 2000</span>
-                <!-- <span class="age"> age==0</span> -->
-                <span class="text">born in Ibaraki pref. in Japan</span>
-            </li>
-            <li>
-                <span class="year">2006</span>
-                <span class="text">start to learn Go</span>
-            </li>
-            <li>
-                <span class="year">2007</span>
-                <span class="text">start to learn Piano</span>
-            </li>
-            <li>
-                <span class="year">2007~2012</span>
-                <span class="text">
-                    <a href="https://moriya.schoolweb.ne.jp/0810046" target="_blank" rel="noopener noreferrer">
-                        Moriya elementary school
-                    </a>
-                </span>
-            </li>
-            <li>
-                <span class="year">2013~2018</span>
-                <span class="text">
-                    <a href="https://www.shibumaku.jp/" target="_blank" rel="noopener noreferrer">
-                        Shibuya Makuhari junior-high / high school
-                    </a>
-                </span>
-            </li>            
-            <li>
-                <span class="year">2019~2022</span>
-                <span class="text">
-                    Bachelor course: University of Tokyo Science I <br>
-                    &emsp;&emsp;↓<br>
-                    <a href="https://www2.mech.t.u-tokyo.ac.jp/" target="_blank" rel="noopener noreferrer">
-                        Mechanical Eng.
-                    </a>
-                </span>
-            </li>
-            
-            <li>
-                <span class="year">2023~2024</span>
-                <span class="text">
-                    Master course:
-                    <a href="https://www.iis.u-tokyo.ac.jp/ja/" target="_blank" rel="noopener noreferrer">
-                        Institute of industrial science
-                    </a>
-                </span>
-            </li>
-        </ul>
+        <h2 class="section-header"><span class="toggle">▶</span> Brief History</h2>
+        <div class="section-content">
+            <ul class="list-common history-list">
+                <!-- 各 li はそのまま -->
+                <li><span class="year">Dec. 2000</span><span class="text">born in Ibaraki pref. in Japan</span></li>
+                <li><span class="year">2006</span><span class="text">start to learn Go</span></li>
+                <li><span class="year">2007</span><span class="text">start to learn Piano</span></li>
+                <li><span class="year">2007~2012</span><span class="text"><a href="https://moriya.schoolweb.ne.jp/0810046" target="_blank">Moriya elementary school</a></span></li>
+                <li><span class="year">2013~2018</span><span class="text"><a href="https://www.shibumaku.jp/" target="_blank">Shibuya Makuhari junior-high / high school</a></span></li>
+                <li><span class="year">2019~2022</span><span class="text">Bachelor course: University of Tokyo Science I <br>&emsp;&emsp;↓<br><a href="https://www2.mech.t.u-tokyo.ac.jp/" target="_blank">Mechanical Eng.</a></span></li>
+                <li><span class="year">2023~2024</span><span class="text">Master course: <a href="https://www.iis.u-tokyo.ac.jp/ja/" target="_blank">Institute of industrial science</a></span></li>
+                <li><span class="year">2025~</span><span class="text"><a href="https://proxima-ai-tech.com/" target="_blank">Proxima Technology Inc. </a>, researcher & engineer</span></li>
+            </ul>
+        </div>
     </section>
 
     <section>
-        <h2>Where I'm familiar with</h2>
-        <ul class="list-common place-list">
-            <li>
-                <span class="year">
-                    Moriya, Ibaraki, Japan
-                    <br>
-                    (60% identity)
-                </span>
-                <span class="text">Lived most of the time</span>
-            </li>
-            
-            <li>
-                <span class="year">
-                    Wuhan, Hubei, China
-                    <br>
-                    (10% identity)
-                </span>
-                <span class="text"> Maternal-hometown
-                </span>
-            </li>
-            <li>
-                <span class="year">
-                    Yingshan, Sichuan, China
-                    <br>
-                    (10% identity)
-                </span>
-                <span class="text"> Paternal-hometown
-                </span>
-            </li>
-            <li>
-                <span class="year">
-                    Shimokitazawa, Tokyo
-                    <br>
-                    (10% identity)
-                </span>
-                <span class="text"> During the master course
-                </span>
-            </li>
-            <li>
-                <span class="year">
-                    Colmar, France
-                    <br>
-                    (7% identity)
-                </span>
-                <span class="text"> The most beautiful place I've ever visited
-                </span>
-            </li>
-            <li>
-                <span class="year">
-                    Hilbert space
-                    <br>
-                    (3% identity)
-                </span>
-                <!-- <span class="text"> The most beautiful place I've ever visited -->
-                </span>
-            </li>
-        </ul>
-    </section>
-    
-    <section>
-        <h2>What I've researched</h2>
-        <ul class="list-common research-list">
-            <li>
-                <span class="year">2017</span>
-                <!-- <span class="age"> age==0</span> -->
-                <span class="text">Relationship between weight and sensory volume due to holding a heavy load <br>
-                    \( E = C \mathrm{log} R \)
-                    <a href="https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A7%E3%83%BC%E3%83%90%E3%83%BC%E2%80%90%E3%83%95%E3%82%A7%E3%83%92%E3%83%8A%E3%83%BC%E3%81%AE%E6%B3%95%E5%89%87" target="_blank" rel="noopener noreferrer">
-                        &emsp;★
-                    </a>
-                </span>
-            </li>
-            <li>
-                <span class="year">2022</span>
-                <span class="text">Evaluation of asymptotic dispersion properties
-                    based on homogenization method
-                    for the wave equation in composite materials <br>
-                    \( \frac{\partial^2 u_\epsilon}{\partial t^2} - \mathrm{div} \left( a_\epsilon(x) \nabla u_\epsilon \right) = 0 \)
-                </span>
-            </li>
-            <li>
-                <span class="year">2023~2024</span> 
-                <span class="text">Variational data assimilation of turbulent cylinder flow up to \( \mathrm{Re}=500 \) using wall surface temperature measurement<br>
-                    \[
-                    \begin{aligned}
-                    &\frac{\partial u_i}{\partial x_i}=0 \quad & \\
-                    &\frac{\partial u_i}{\partial t} + u_j \frac{\partial u_i}{\partial x_j} =
-                    -\frac{\partial p}{\partial x_i} + \frac{1}{\mathrm{Re}} \frac{\partial^2 u_i}{\partial x_j \partial x_j} 
-                    \quad &\\
-                    &\frac{\partial \theta}{\partial t} + u_j \frac{\partial \theta}{\partial x_j} =
-                    \frac{1}{\mathrm{Pe}} \frac{\partial^2 \theta}{\partial x_j \partial x_j} 
-                    \quad &
-                    \end{aligned}
-                    \]
-                </span>
-            </li>
-        </ul>
+        <h2 class="section-header"><span class="toggle">▶</span> Where I'm familiar with</h2>
+        <div class="section-content">
+            <ul class="list-common place-list">
+                <li><span class="year">Moriya, Ibaraki, Japan<br>(60% identity)</span><span class="text">Lived most of the time</span></li>
+                <li><span class="year">Wuhan, Hubei, China<br>(10% identity)</span><span class="text">Maternal-hometown</span></li>
+                <li><span class="year">Yingshan, Sichuan, China<br>(10% identity)</span><span class="text">Paternal-hometown</span></li>
+                <li><span class="year">Shimokitazawa, Tokyo<br>(10% identity)</span><span class="text">During the master course</span></li>
+                <li><span class="year">Colmar, France<br>(7% identity)</span><span class="text">The most beautiful place I've ever visited</span></li>
+                <li><span class="year">Hilbert space<br>(3% identity)</span></li>
+            </ul>
+        </div>
     </section>
 
     <section>
-        <h2>What I'm interested in, questioned about</h2>
-        <ul class="list-common interest-list">
-            <li>
-                <span class="year">Physics</span>
-                <div class="text">
-                    <ul>
-                        <li>How to grasp / control chaotic systems?</li>
-                        <li>Hierarchies from micro to macro</li>
-                        <li>Intermediate of deterministic system and complete randomness
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <span class="year">Engineering</span>
-                <div class="text">
-                    <ul>
-                        <li>Inverse problem / optimization</li>
-                        <li>Parallel computing</li>
-                        <li>Run cool simulation</li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <span class="year">Books</span>
-                <div class="text">
-                    <ul>
-                        <li><a href="https://www.amazon.co.jp/%E4%B8%89%E4%BD%93-%E3%83%8F%E3%83%A4%E3%82%AB%E3%83%AF%E6%96%87%E5%BA%ABSF-%E5%8A%89-%E6%85%88%E6%AC%A3-ebook/dp/B0CTJH9YTQ/ref=sr_1_2?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&sr=8-2" target="_blank" rel="noopener noreferrer">
-                            SF</a>, mystery novels, absorbing someone's experience
-                        </li>
-                        <li>How to novelize what I think, learn and love?</li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <span class="year">Music</span>
-                <div class="text">
-                    <ul>
-                        <li>
-                            Impressionist &emsp;
-                            <span style="white-space: nowrap;">
-                                (Chopin, Debussy,
-                                <a href="https://www.youtube.com/watch?v=5q-7WeFsooM" target="_blank" rel="noopener noreferrer">
-                                    Rachmaninov
-                                </a>)
-                            </span>
-                        </li>
-                        <li>
-                            <span style="white-space: nowrap;">
-                                <a href="https://www.youtube.com/watch?v=-fz_cIXi8OY" target="_blank" rel="noopener noreferrer">
-                                    Vocaloid
-                                </a>
-                            </span>
-                        </li>
-                        <li>How to compose what I image?</li>
-                        <li>Where is the border of pleasant in diverse sounds?</li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <span class="year">Sports</span>
-                <div class="text">
-                    <ul>
-                        <li>load cycle, table tennis, Go
-                        </li>
-                        
-                    </ul>
-                </div>
-            </li>
-        </ul>
-        
+        <h2 class="section-header"><span class="toggle">▶</span> What I've researched</h2>
+        <div class="section-content">
+            <ul class="list-common research-list">
+                <li><span class="year">2017</span><span class="text">Relationship between weight and sensory volume due to holding a heavy load <br> \( E = C \mathrm{log} R \) <a href="https://ja.wikipedia.org/wiki/ヴェーバー‐フェヒナーの法則" target="_blank">&emsp;★</a></span></li>
+                <li><span class="year">2022</span><span class="text">Evaluation of asymptotic dispersion properties based on homogenization method for the wave travelling in composite materials <br> \( \frac{\partial^2 u_\epsilon}{\partial t^2} - \mathrm{div} \left( a_\epsilon(x) \nabla u_\epsilon \right) = 0 \)</span></li>
+                <li><span class="year">2023~2024</span><span class="text">Variational data assimilation of turbulent cylinder flow up to \( \mathrm{Re}=500 \) using wall surface temperature measurement<br> \[ \begin{aligned} &\frac{\partial u_i}{\partial x_i}=0 \quad & \\ &\frac{\partial u_i}{\partial t} + u_j \frac{\partial u_i}{\partial x_j} = -\frac{\partial p}{\partial x_i} + \frac{1}{\mathrm{Re}} \frac{\partial^2 u_i}{\partial x_j \partial x_j} \quad &\\ &\frac{\partial \theta}{\partial t} + u_j \frac{\partial \theta}{\partial x_j} = \frac{1}{\mathrm{Pe}} \frac{\partial^2 \theta}{\partial x_j \partial x_j} \quad & \end{aligned} \]<br>button↗</span></li>
+            </ul>
+        </div>
     </section>
 
     <section>
-        <h2>Contents Vault</h2>
-        <ul class="list-common content-list">
-            <li class="has-link", style="cursor: pointer;" onclick="window.open('hobby.html', '_blank')">
-                <span class="year">Under construction</span>
-            </li>
-        </ul>
+        <h2 class="section-header"><span class="toggle">▶</span> What I'm interested in, questioned about</h2>
+        <div class="section-content">
+            <ul class="list-common interest-list">
+                <li><span class="year">Physics</span><div class="text"><ul><li>How to grasp / control chaotic systems?</li><li>Hierarchies from micro to macro</li><li>Intermediate of deterministic system and complete randomness</li></ul></div></li>
+                <li><span class="year">Engineering</span><div class="text"><ul><li>Inverse problem / optimization</li><li>Parallel computing</li><li>Run cool simulations</li></ul></div></li>
+                <li><span class="year">Books</span><div class="text"><ul><li><a href="https://www.amazon.co.jp/三体-ハヤカワ文庫SF-劉-慈欣-ebook/dp/B0CTJH9YTQ/" target="_blank">SF</a>, mystery, absorbing someone's experience</li><li>How to novelize what I think, learn and love?</li></ul></div></li>
+                <li><span class="year">Music</span><div class="text"><ul><li>Impressionist <span style="white-space: nowrap;">(Chopin, Debussy, <a href="https://www.youtube.com/watch?v=5q-7WeFsooM" target="_blank">Rachmaninov</a>)</span></li><li><span style="white-space: nowrap;"><a href="https://www.youtube.com/watch?v=-fz_cIXi8OY" target="_blank">Vocaloid</a></span></li><li>How to compose what I image?</li><li>Where is the border of pleasant music in diverse sounds?</li></ul></div></li>
+                <li><span class="year">Sports</span><div class="text"><ul><li>load cycle, table tennis, Go</li></ul></div></li>
+            </ul>
+        </div>
     </section>
-    
+
+    <section>
+        <h2 class="section-header"><span class="toggle">▶</span> Contents Vault</h2>
+        <div class="section-content">
+            <ul class="list-common content-list">
+                <li class="has-link" style="cursor: pointer;" onclick="window.open('hobby.html', '_blank')">
+                    <span class="year">Under construction</span>
+                </li>
+            </ul>
+        </div>
+    </section>
 
     <footer>
         <p>© 2025 Yuta Harimoto</p>
     </footer>
-
-    <!-- Javascript -->
-    <script>
-        document.getElementById('toggleContentBtn').addEventListener('click', function() {
-            document.body.classList.toggle('hide-content');
-        });
-    </script>
 </body>
 </html>

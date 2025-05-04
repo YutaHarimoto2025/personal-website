@@ -13,6 +13,8 @@ body::before {
     z-index: -1;  /* 背景レイヤーに配置 */
 }
 
+
+
 body {
     font-family: "Arial", sans-serif;
     background-color: #84b6c2;
@@ -251,3 +253,37 @@ body.hide-content::before {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
+
+/* セクションの表示・非表示 */
+section {
+    max-width: 800px;   /* セクション幅を制限 */
+    margin: 0 auto;     /* 左右中央寄せ */
+    padding: 20px;      /* 上下余白 */
+    text-align: left;   /* 中のテキストは左揃えのまま */
+}
+
+.section-content {
+    display: none;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.section-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.section-header .toggle {
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.section-header.active .toggle {
+    transform: rotate(90deg);
+}
+
+
+
